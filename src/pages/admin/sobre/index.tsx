@@ -16,6 +16,7 @@ import { AboutResponseProps } from '../../../types/aboutTypes';
 import { parseCookie } from '../../../utils/cookies';
 
 import styles from './styles.module.scss';
+import { PLACEHOLDER_IMAGE, PLACEHOLDER_TITLE, PLACEHOLDER_ALT } from '../../../utils/placeholders';
 
 interface AboutPageProps {
   aboutData: AboutResponseProps;
@@ -110,7 +111,7 @@ export default function About({ aboutData }: AboutPageProps) {
                 label="Título"
                 id="title"
                 name="title"
-                defaultValue={aboutData?.title}
+                defaultValue={aboutData?.title || PLACEHOLDER_TITLE}
                 disabled={!inputDisabled}
               />
             </div>
@@ -119,7 +120,7 @@ export default function About({ aboutData }: AboutPageProps) {
                 label="Texto alternativo"
                 id="altText"
                 name="altText"
-                defaultValue={aboutData?.file?.altText}
+                defaultValue={aboutData?.file?.altText || PLACEHOLDER_ALT}
                 disabled={!inputDisabled}
               />
               <div className={styles.fileUpload}>
@@ -141,14 +142,14 @@ export default function About({ aboutData }: AboutPageProps) {
                     />
                   </label>
                   <div className={styles.fileName}>
-                    {selectedFile?.name || aboutData?.file?.imageName || ''}
+                    {selectedFile?.name || aboutData?.file?.imageName || 'placeholder.png'}
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.image}>
               <Image
-                src={aboutData?.file?.url}
+                src={aboutData?.file?.url || PLACEHOLDER_IMAGE}
                 height={300}
                 width={440}
                 alt="Imagem da página Sobre"

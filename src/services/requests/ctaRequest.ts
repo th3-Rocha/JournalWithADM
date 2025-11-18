@@ -7,7 +7,11 @@ export async function registerCTA(data: FormData) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao registrar CTA', IsTokenError: false } as any;
   }
 }
 
@@ -17,7 +21,11 @@ export async function getAllCTAs(): Promise<CTAResponse> {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return [] as any;
   }
 }
 
@@ -27,7 +35,11 @@ export async function updateCTA(id: string | undefined, data: FormData) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao atualizar CTA', IsTokenError: false } as any;
   }
 }
 
@@ -37,6 +49,10 @@ export async function deleteCTA(id: string): Promise<{ success: string }> {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { success: 'false' } as any;
   }
 }

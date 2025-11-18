@@ -2,6 +2,7 @@ import { api } from '../api';
 
 import { NewsResponseProps } from '../../types/newsTypes';
 import { useRouter } from 'next/router';
+import { DEFAULT_PAGINATED_NEWS } from '../../utils/placeholders';
 
 export async function registerNews(data: FormData) {
   try {
@@ -9,7 +10,11 @@ export async function registerNews(data: FormData) {
     
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao criar notícia', IsTokenError: false } as any;
   }
 }
 
@@ -25,8 +30,11 @@ export async function updateNews(
 
     return response.data;
   } catch (error: any) {
-    
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao atualizar notícia', IsTokenError: false } as any;
   }
 }
 
@@ -49,8 +57,11 @@ export async function addPostToGroup(
     
     return response.data;
   } catch (error: any) {
-    
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao adicionar post no grupo', IsTokenError: false } as any;
   }
 }
 
@@ -65,7 +76,11 @@ export async function updateNewsText(
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao atualizar texto da notícia', IsTokenError: false } as any;
   }
 }
 
@@ -75,8 +90,11 @@ export async function deleteNews(id: string) {
     const response = await api.delete(`/news/delete/${id}`);
     return response;
   } catch (error: any) {
-
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao excluir notícia', IsTokenError: false } as any;
   }
 }
 
@@ -86,7 +104,11 @@ export async function getOneNews(id: string | string[] | undefined) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao buscar notícia', IsTokenError: false } as any;
   }
 }
 
@@ -98,7 +120,7 @@ export async function getAllPaginatedNews(page = 1) {
 
     
   } catch (error: any) {
-    return "Erro ao listar notícias";
+    return DEFAULT_PAGINATED_NEWS;
   }
 }
 
@@ -109,7 +131,7 @@ export async function getAllPaginatedNewsOfGroup(id: string | string[] | undefin
     return response.data;
 
   } catch (error: any) {
-    return "Erro ao listar notícias";
+    return DEFAULT_PAGINATED_NEWS;
   }
 }
 

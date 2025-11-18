@@ -17,7 +17,11 @@ export async function registerGroup(data: FormData) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao criar grupo', IsTokenError: false } as any;
   }
 }
 
@@ -34,8 +38,11 @@ export async function updateGroup(id: string | undefined | string[],data: FormDa
 
     return response.data;
   } catch (error: any) {
-    
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao atualizar grupo', IsTokenError: false } as any;
   }
 }
 
@@ -46,7 +53,11 @@ export async function deleteGroup(id: string | undefined | string[]) {
 
     return response;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao excluir grupo', IsTokenError: false } as any;
   }
 }
 
@@ -56,7 +67,11 @@ export async function getOneGroup(id: string | string[] | undefined) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao buscar grupo', IsTokenError: false } as any;
   }
 }
 
@@ -66,6 +81,6 @@ export async function getAllPaginatedGroup(page = 1) {
 
     return response.data;
   } catch (error: any) {
-    return "Erro ao listar Grupos";
+    return { response: [], totalPages: 1 } as any;
   }
 }

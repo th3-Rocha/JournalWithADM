@@ -11,7 +11,11 @@ export async function registerBanner(data: FormData) {
 
     return response.data;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao registrar banner', IsTokenError: false } as any;
   }
 }
 
@@ -24,8 +28,11 @@ export async function updateBanner(id: string | undefined, data: FormData) {
 
     return response.data;
   } catch (error: any) {
-    
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { error: 'Falha ao atualizar banner', IsTokenError: false } as any;
   }
 }
 
@@ -35,6 +42,10 @@ export async function deleteBanner(id: string) {
 
     return response;
   } catch (error: any) {
-    return JSON.parse(error.request.response);
+    try {
+      if (error?.response?.data) return error.response.data;
+      if (error?.request?.response) return JSON.parse(error.request.response);
+    } catch {}
+    return { status: 500 } as any;
   }
 }

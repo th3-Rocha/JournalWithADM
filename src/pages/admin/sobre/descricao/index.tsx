@@ -13,13 +13,14 @@ import { updateDescriptionAbout } from '../../../../services/requests/aboutReque
 import { AboutResponseProps } from '../../../../types/aboutTypes';
 
 import styles from './styles.module.scss';
+import { PLACEHOLDER_DESCRIPTION } from '../../../../utils/placeholders';
 
 type AboutDescriptionProps = {
   aboutData: AboutResponseProps;
 };
 
 export default function AboutDescription({ aboutData }: AboutDescriptionProps) {
-  const initialDescription = aboutData.text;
+  const initialDescription = aboutData?.text || PLACEHOLDER_DESCRIPTION;
   const [description, setDescription] = useState(initialDescription ?? '');
 
   const router = useRouter();
