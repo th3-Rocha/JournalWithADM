@@ -1,0 +1,30 @@
+.button {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+
+  min-width: 10rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+
+  color: var(--white);
+  background: var(--secondary-color);
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &.left {
+    background: var(--white-100);
+    color: var(--secondary-color);
+  }
+}

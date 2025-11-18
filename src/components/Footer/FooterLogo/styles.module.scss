@@ -1,0 +1,37 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    color: var(--brown-600);
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+    position: relative;
+    height: 46px;
+    width: 100%;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 102px;
+      height: 32px;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 102px;
+      height: 36px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 102px;
+      height: 40px;
+    }
+  }
+}

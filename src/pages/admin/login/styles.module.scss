@@ -1,0 +1,75 @@
+.form {
+  max-width: 28rem;
+  margin: 3rem auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    height: 3.5rem;
+    margin-top: 2rem;
+    border: 0;
+    width: 22rem;
+    background: var(--secondary-color);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .row {
+    label {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    & + div {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 0.5rem;
+
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 10px;
+    position: absolute;
+  }
+
+  input {
+    height: 3.5rem;
+    border: 0;
+    padding: 0 2.5rem;
+    border-radius: 0.5rem;
+    width: 22rem;
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--secondary-color);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px white inset !important;
+    }
+  }
+
+  input:focus + svg path {
+    fill: var(--secondary-color);
+  }
+}

@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem rgba(0, 0, 0, 0.2);
+
+    max-width: 1040px;
+    margin: 2rem;
+    width: 100%;
+
+    background: var(--white);
+    border-radius: 0.5rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      color: blue;
+    }
+
+    form {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
+
+.contentButton {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.row {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+
+  div {
+    width: 50%;
+
+    span {
+      font-size: 1rem;
+    }
+
+    input {
+      background: none;
+      border: 1px solid var(--gray-200);
+    }
+
+    input:disabled {
+      border: none;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  & + div {
+    margin-top: 1.5rem;
+  }
+}
+
+.logosContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .fieldsLogo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

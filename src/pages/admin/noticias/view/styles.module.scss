@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+
+  .view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem rgba(0, 0, 0, 0.2);
+    padding: 3rem 2rem;
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #121214;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 0;
+      border-radius: 0.5rem;
+
+      padding: 0 1.5rem;
+      height: 3.125rem;
+      width: 10rem;
+      float: right;
+
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: none;
+
+      color: var(--white);
+      background: var(--secondary-color);
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      gap: 2rem;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+
+      .published {
+        display: flex;
+        gap: 0.5rem;
+        cursor: default;
+        align-items: center;
+
+        .switch {
+          display: flex;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .image {
+        border-radius: 0.5rem;
+      }
+    }
+
+    .newsText {
+      margin-top: 1rem;
+      > div {
+        border: 1px solid var(--gray-200);
+        padding: 0.5rem 1rem;
+        background-color: #fff;
+        border-radius: 0.5rem;
+
+        ul,
+        ol {
+          padding: 0.5rem 3rem;
+        }
+      }
+    }
+  }
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  div {
+    border: 1px solid var(--gray-200);
+    cursor: default;
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    color: var(--black-800);
+    background: var(--white);
+  }
+}

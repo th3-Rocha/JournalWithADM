@@ -1,0 +1,74 @@
+/* styles.module.scss */
+
+.dropdown {
+  position: relative;
+  width: 300px; 
+  font-weight: 500;
+  color: var(--brown-600);
+  font-size: 1.1rem;
+  
+  cursor: pointer;
+}
+
+.dropdown select {
+  margin-top: 0.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  min-width: 30rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+
+  color: var(--white);
+  background: var(--secondary-color);
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &.left {
+    background: var(--white-100);
+    color: var(--secondary-color);
+  }
+} 
+
+/* Background icon */
+.dropdown:after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  transition: 0.2s all; 
+  cursor: pointer;
+}
+
+/* Rotate icon on open */
+.dropdown.open:after {
+  transform: translateY(-50%) rotate(180deg); 
+  font-size: 1.2rem;
+  background: var(--white-100);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* Transition */
+.dropdown select {
+  transition: background 0.2s;
+  &:hover {
+    background: var(--white-100);
+    color: var(--secondary-color);
+  }
+}

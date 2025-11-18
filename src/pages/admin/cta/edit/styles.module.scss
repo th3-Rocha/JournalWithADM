@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+
+  main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    form {
+      width: 100%;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 0.5rem;
+
+      h2 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+
+    .row {
+      margin-top: 1.5rem;
+      display: flex;
+      width: 100%;
+      gap: 2rem;
+
+      > div {
+        width: 100%;
+        span {
+          font-size: 1rem;
+        }
+
+        input {
+          border: 1px solid var(--gray-200);
+
+          &:focus {
+            border: 2px solid var(--secondary-color);
+          }
+        }
+      }
+    }
+
+    .fileContainer {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        color: var(--brown-600);
+        font-weight: 500;
+      }
+      .upload {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+
+        label {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          min-width: 12rem;
+          height: 3.125rem;
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 0.5rem;
+
+          svg {
+            height: 2rem;
+            width: 2rem;
+          }
+        }
+      }
+
+      .fileName {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        height: 3.125rem;
+
+        overflow-x: scroll;
+        white-space: nowrap;
+        text-overflow: hidden;
+
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 0.4rem;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+
+    .ctaDescription {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        color: var(--brown-600);
+        font-weight: 500;
+      }
+
+      textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 8rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--brown-600);
+        border: 1px solid var(--gray-200);
+
+        resize: none;
+
+        &:focus {
+          border: 2px solid var(--secondary-color);
+        }
+      }
+    }
+
+    .contentButton {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+
+      #left {
+        background: var(--white-100);
+        color: var(--secondary-color);
+      }
+    }
+  }
+}

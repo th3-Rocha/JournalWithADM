@@ -1,0 +1,25 @@
+.nextLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--secondary-color);
+  color: var(--white);
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+
+  min-width: 10rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}

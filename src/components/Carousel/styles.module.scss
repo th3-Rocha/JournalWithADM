@@ -1,0 +1,60 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 3rem;
+  margin: 3rem auto;
+
+  @media screen and (max-width: 620px) {
+    padding: 0 2rem;
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.container {
+  display: flex;
+  min-height: 375px;
+  align-items: center;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -10px;
+}
+
+.slide {
+  position: relative;
+  min-width: 100%;
+  padding-left: 10px;
+}
+
+.slide_inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 375px;
+
+  .slide_img {
+    position: absolute;
+    width: 100%;
+    height: 375px;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 820px) {
+    height: 220px;
+  }
+}

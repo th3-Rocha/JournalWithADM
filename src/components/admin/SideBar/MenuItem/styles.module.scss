@@ -1,0 +1,17 @@
+.link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--brown-600);
+  gap: 1rem;
+  font-size: 1rem;
+
+  a{
+    font-size: 3rem;
+
+  }
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}

@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem rgba(0, 0, 0, 0.2);
+
+    margin: 2rem;
+    width: 100%;
+    background: var(--white);
+
+    form {
+      width: 100%;
+      padding: 2rem;
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: blue;
+      }
+    }
+
+    .title {
+      width: 100%;
+
+      > div {
+        input {
+          background: none;
+          border: 1px solid var(--gray-200);
+        }
+
+        input:disabled {
+          border: none;
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .row {
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      gap: 2rem;
+
+      > div {
+        width: 50%;
+
+        input {
+          background: none;
+          border: 1px solid var(--gray-200);
+        }
+
+        input:disabled {
+          border: none;
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .fileUpload {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 1rem;
+          margin-bottom: 0.4rem;
+          color: var(--brown-600);
+          font-weight: 500;
+        }
+
+        > div {
+          display: flex;
+          width: 100%;
+          gap: 1rem;
+
+          > label {
+            cursor: pointer;
+            display: flex;
+            width: 25%;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            height: 3.125rem;
+
+            svg {
+              height: 2rem;
+              width: 2rem;
+            }
+          }
+
+          .fileName {
+            border-radius: 0.4rem;
+            background: rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 3.125rem;
+            padding: 1rem;
+            width: 75%;
+            white-space: nowrap;
+            align-items: center;
+            overflow-x: scroll;
+            text-overflow: hidden;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .image {
+      margin-top: 1rem;
+
+      img {
+        border-radius: 0.4rem;
+      }
+    }
+
+    .contentButton {
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: right;
+      gap: 1rem;
+
+      button {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

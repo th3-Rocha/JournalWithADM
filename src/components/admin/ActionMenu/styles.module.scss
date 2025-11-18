@@ -1,0 +1,17 @@
+
+.container {
+  
+  position: relative;
+  
+  button {
+    display: flex;
+    justify-content: left;
+    border-radius: 0.25rem;
+    border: 0;
+    background: transparent;
+  
+    &:hover {
+      background: var(--white-100);
+    }
+  }
+}
